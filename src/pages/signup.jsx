@@ -104,12 +104,12 @@ const Signup = () => {
         {/* Google */}
         <button className="w-full border py-3 rounded-md flex justify-center items-center gap-2 hover:bg-gray-100">
           <FcGoogle />
-          Continue with Google
+          merf
         </button>
 
         {/* Sign In Link */}
         <p className="text-center text-gray-600 mt-6">
-          Already have an account?{" "}
+          Already have an azuz?{" "}
           <Link to="/signin" className="text-blue-600 font-medium hover:underline">
             Sign In
           </Link>
