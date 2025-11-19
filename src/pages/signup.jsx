@@ -86,7 +86,7 @@ const Signup = () => {
               <p className="text-red-500 text-sm mt-1">{errors.password}</p>
             )}
           </div>
-
+              
           {/* Create Button */}
           <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">
             Create Account
