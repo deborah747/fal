@@ -23,7 +23,7 @@ const Contact = () => {
       </section>
 
       {/* MAIN CONTENT */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 md:px-16 py-16 max-w-7xl mx-auto">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 md:px-16 py-16  bg-blue-50">
         
         {/* CONTACT FORM */}
         <motion.div 
@@ -35,11 +35,11 @@ const Contact = () => {
           <h2 className="text-3xl font-semibold mb-6 text-blue-600">Send Us a Message</h2>
 
           <form className="space-y-5">
-            <input type="text" placeholder="Full Name" className="w-full p-3 border rounded-lg" />
-            <input type="email" placeholder="Email Address" className="w-full p-3 border rounded-lg" />
-            <input type="text" placeholder="Phone Number (Optional)" className="w-full p-3 border rounded-lg" />
+            <input type="text" placeholder="Full Name" className="w-full p-3 border rounded-lg border-gray-700" />
+            <input type="email" placeholder="Email Address" className="w-full p-3 border rounded-lg border-gray-700" />
+            <input type="text" placeholder="Phone Number (Optional)" className="w-full p-3 border rounded-lg border-gray-700" />
 
-            <select className="w-full p-3 border rounded-lg">
+            <select className="w-full p-3 border rounded-lg border-gray-700">
               <option>Subject</option>
               <option>Booking Inquiry</option>
               <option>Customer Support</option>
@@ -47,7 +47,7 @@ const Contact = () => {
               <option>Partnership Request</option>
             </select>
 
-            <textarea rows="5" placeholder="Your Message" className="w-full p-3 border rounded-lg"></textarea>
+            <textarea rows="5" placeholder="Your Message" className="w-full p-3 border rounded-lg border-gray-700"></textarea>
 
             <button className="bg-blue-600 text-white w-full py-3 rounded-lg font-medium hover:bg-blue-700 transition">
               Send Message

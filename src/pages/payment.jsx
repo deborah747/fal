@@ -62,7 +62,7 @@ const Payment = () => {
                   min="1"
                   value={travelers}
                   onChange={(e) => setTravelers(Number(e.target.value))}
-                  className="w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full border p-2 rounded-lg focus:ring-1  focus:ring-blue-500 border-blue-500"
                 />
               </div>
 
@@ -73,7 +73,7 @@ const Payment = () => {
                   min="1"
                   value={days}
                   onChange={(e) => setDays(Number(e.target.value))}
-                  className="w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full border p-2 rounded-lg focus:ring-2 focus:ring-blue-500  border-blue-500"
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@ const Payment = () => {
                 placeholder="Cardholder Name"
                 value={cardName}
                 onChange={(e) => setCardName(e.target.value)}
-                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500"
+                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
 
               <input
@@ -102,7 +102,7 @@ const Payment = () => {
                 placeholder="Card Number"
                 value={cardNumber}
                 onChange={(e) => setCardNumber(e.target.value)}
-                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500"
+                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
 
               <input
@@ -110,7 +110,7 @@ const Payment = () => {
                 placeholder="CVV"
                 value={cvv}
                 onChange={(e) => setCvv(e.target.value)}
-                className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500"
+                className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
             </div>
 
@@ -125,7 +125,7 @@ const Payment = () => {
         </div>
       ) : (
         /* SUCCESS SCREEN */
-        <div className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-10 text-center">
+        <div className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-20 mt-20 text-center">
 
           <div className="w-20 h-20 bg-green-100 rounded-full flex mx-auto mb-4">
             <span className="m-auto text-green-600 text-4xl">✔</span>

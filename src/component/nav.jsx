@@ -49,7 +49,7 @@ const Nav = () => {
         <div className="hidden md:flex space-x-4 font-medium text-lg">
           <Link to="/signin">
             <button
-              className={`${!isHome || scrolled ? "text-blue-600  hover:text-blue-800" : "text-white  hover:text-gray-400"}`}
+              className={` pt-2  ${!isHome || scrolled ? "text-blue-600  hover:text-blue-800" : "text-white  hover:text-gray-400"}`}
             >
               Login
             </button>
