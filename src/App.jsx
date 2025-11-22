@@ -13,6 +13,8 @@ import Tour from './pages/tour';
 import Booking from './pages/booking';
 import Filter from './pages/filter';
 import Payment from './pages/payment';
+import ProtectedRoute from './component/ProtectedRoute';
+import Dashboard from './pages/dashboard';
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ const App = () => {
             <Route path="/hotel" element={<Hotels />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/filter" element={<Filter />} />
+            <Route path="/dashboard"  element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> }
+/>
           </Routes>
         </div>
         <Footer />

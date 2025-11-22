@@ -1,37 +1,53 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Signup = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errors, setErrors] = useState({});
+  const [firebaseError, setFirebaseError] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let newErrors = {};
-
     if (!name.trim()) newErrors.name = "Full name is required";
     if (!email.trim()) newErrors.email = "Email is required";
     if (!password.trim()) newErrors.password = "Password is required";
 
     setErrors(newErrors);
-
-    // Stop submit if errors exist
     if (Object.keys(newErrors).length > 0) return;
 
-    alert("Account created successfully!");
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/dashboard");
+    } catch (error) {
+      setFirebaseError(error.message);
+    }
+  };
+
+  const handleGoogleSignup = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/dashboard");
+    } catch (error) {
+      setFirebaseError(error.message);
+    }
   };
 
   return (
     <div>
-      <section className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      <section className="h-full flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/images/bg.jpg')" }}>
-      
+
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative bg-white/90 backdrop-blur-md p-8 pt-3 rounded-2xl w-[90%] max-w-md shadow-xl mt-20 mb-4">
@@ -39,6 +55,10 @@ const Signup = () => {
         <h2 className="text-3xl font-bold text-center text-blue-600 mb-3">
           Create Account
         </h2>
+
+        {firebaseError && (
+          <p className="text-red-500 text-center mb-3 text-sm">{firebaseError}</p>
+        )}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
 
@@ -102,14 +122,17 @@ const Signup = () => {
         </div>
 
         {/* Google */}
-        <button className="w-full border py-3 rounded-md flex justify-center items-center gap-2 hover:bg-gray-100">
-          <FcGoogle />
-          merf
+        <button 
+          onClick={handleGoogleSignup}
+          className="w-full border py-3 rounded-md flex justify-center items-center gap-2 hover:bg-gray-100"
+        >
+          <FcGoogle size={22} />
+          Continue with Google
         </button>
 
         {/* Sign In Link */}
         <p className="text-center text-gray-600 mt-6">
-          Already have an azuz?{" "}
+          Already have an account?{" "}
           <Link to="/signin" className="text-blue-600 font-medium hover:underline">
             Sign In
           </Link>

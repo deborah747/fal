@@ -59,7 +59,7 @@ const DestinationDetail = () => {
   };
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 ">
 
       {/* HERO SECTION */}
       <div className="relative h-[380px] w-full">
@@ -68,7 +68,7 @@ const DestinationDetail = () => {
           className="w-full h-full object-cover brightness-75 rounded-b-2xl"
         />
         <div className="absolute inset-0 bg-black/40"></div>
-        <h1 className="absolute bottom-10 left-10 text-white text-5xl font-extrabold drop-shadow-md">
+        <h1 className="absolute bottom-10 left-30 text-white text-5xl font-extrabold drop-shadow-md">
           {data.name}
         </h1>
       </div>

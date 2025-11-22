@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Signin = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errors, setErrors] = useState({});
+  const [firebaseError, setFirebaseError] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let newErrors = {};
@@ -18,10 +22,24 @@ const Signin = () => {
     if (!password.trim()) newErrors.password = "Password is required";
 
     setErrors(newErrors);
-
     if (Object.keys(newErrors).length > 0) return;
 
-    alert("Signed in successfully!");
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/dashboard"); // redirect to dashboard when logged in
+    } catch (error) {
+      setFirebaseError(error.message);
+    }
+  };
+
+  const handleGoogleSignin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/dashboard");
+    } catch (error) {
+      setFirebaseError(error.message);
+    }
   };
 
   return (
@@ -37,7 +55,12 @@ const Signin = () => {
           Welcome Back
         </h2>
 
+        {firebaseError && (
+          <p className="text-red-500 text-center mb-4 text-sm">{firebaseError}</p>
+        )}
+
         <form className="space-y-4" onSubmit={handleSubmit}>
+
           {/* Email */}
           <div>
             <label className="text-sm font-medium text-gray-700">Email</label>
@@ -68,7 +91,7 @@ const Signin = () => {
             )}
           </div>
 
-          {/* Button */}
+          {/* Sign In Button */}
           <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">
             Sign In
           </button>
@@ -81,9 +104,12 @@ const Signin = () => {
           <div className="h-1 bg-gray-300 flex-1"></div>
         </div>
 
-        {/* Google */}
-        <button className="w-full border py-3 rounded-md flex justify-center items-center gap-2 hover:bg-gray-100">
-          <FcGoogle />
+        {/* Google Sign In */}
+        <button 
+          onClick={handleGoogleSignin}
+          className="w-full border py-3 rounded-md flex justify-center items-center gap-2 hover:bg-gray-100"
+        >
+          <FcGoogle size={22} />
           Continue with Google
         </button>
 
@@ -95,7 +121,7 @@ const Signin = () => {
           </Link>
         </p>
       </div>
-    </section>
+    </section> 
     </div>
   )
 }

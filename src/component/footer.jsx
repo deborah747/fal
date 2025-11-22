@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div >
-      <footer className="bg-blue-900 text-gray-200 py-16 mt-20">
+      <footer className="bg-blue-900 text-gray-200 py-10 ">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
 
         {/* Logo & About */}
@@ -30,7 +30,7 @@ const Footer = () => {
         {/* Explore */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-white">Explore</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-4 text-sm">
           <Link to={'/des'}><li className="hover:text-white cursor-pointer">Destinations</li></Link>
             <Link to={'/hotel'}><li className="hover:text-white cursor-pointer">Hotels</li></Link>
             <Link to={'/tours'}><li className="hover:text-white cursor-pointer">Tours</li></Link>
@@ -49,7 +49,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full p-3 text-gray-50 rounded-lg focus:outline-none border border-black "
+              className="w-full p-3 text-gray-50 rounded-l-lg focus:outline-none border "
             />
             <button className="bg-blue-600 px-5 py-3 rounded-r-lg text-white hover:bg-blue-700">
               Join
@@ -67,8 +67,8 @@ const Footer = () => {
 
       </div>
 
-      <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
-        © 2025 TravelEase. All Rights Reserved.
+      <div className="border-t  mt-12 pt-6 text-center text-sm text-gray-400">
+            © 2025 TravelEase. All Rights Reserved.
       </div>
     </footer>
     </div>

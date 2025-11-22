@@ -46,9 +46,9 @@ const Payment = () => {
 
             {/* HOTEL SUMMARY */}
             <div className="bg-gray-100 p-4 rounded-xl shadow-sm mb-6">
-              <h2 className="text-xl font-semibold text-blue-700">{hotel.name}</h2>
-              <p className="text-gray-600 mt-1 text-sm">Price per night:</p>
-              <p className="text-blue-600 text-xl font-bold">
+               <h2 className="text-xl font-semibold text-blue-700">{hotel.name}</h2>
+               <p className="text-gray-600 mt-1 text-sm">Price per night:</p>
+               <p className="text-blue-600 text-xl font-bold">
                 ${hotel.price}
               </p>
             </div>
@@ -90,27 +90,27 @@ const Payment = () => {
               </h3>
 
               <input
-                type="text"
-                placeholder="Cardholder Name"
-                value={cardName}
-                onChange={(e) => setCardName(e.target.value)}
-                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
+                 type="text"
+                 placeholder="Cardholder Name"
+                 value={cardName}
+                 onChange={(e) => setCardName(e.target.value)}
+                 className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
 
               <input
-                type="text"
-                placeholder="Card Number"
-                value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
-                className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
+                 type="text"
+                 placeholder="Card Number"
+                 value={cardNumber}
+                 onChange={(e) => setCardNumber(e.target.value)}
+                 className="w-full border p-3 rounded-lg mb-3 focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
 
               <input
-                type="text"
-                placeholder="CVV"
-                value={cvv}
-                onChange={(e) => setCvv(e.target.value)}
-                className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500  border-blue-500"
+                 type="text"
+                 placeholder="CVV"
+                 value={cvv}
+                 onChange={(e) => setCvv(e.target.value)}
+                 className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500  border-blue-500"
               />
             </div>
 
@@ -125,11 +125,10 @@ const Payment = () => {
         </div>
       ) : (
         /* SUCCESS SCREEN */
-        <div className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-20 mt-20 text-center">
-
-          <div className="w-20 h-20 bg-green-100 rounded-full flex mx-auto mb-4">
-            <span className="m-auto text-green-600 text-4xl">✔</span>
-          </div>
+         <div  className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-20 mt-30 text-center h-96">
+         <div  className="w-20 h-20 bg-green-100 rounded-full flex mx-auto mb-4">
+             <span className="m-auto text-green-600 text-4xl">✔</span>
+        </div>
 
           <h1 className="text-3xl font-bold text-green-600 mb-4">
             Payment Successful!

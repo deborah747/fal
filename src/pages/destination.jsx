@@ -71,7 +71,7 @@ const Destination = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         
-        <div className="bg-white p-6 rounded-xl shadow-sm h-fit md:sticky top-24">
+        <div className="bg-white p-6 rounded-xl shadow-sm h-96 md:sticky top-24">
           <h2 className="text-xl font-semibold text-blue-700 mb-4">Filter</h2>
 
           <label className="block mb-2 font-medium text-gray-700">Continent</label>

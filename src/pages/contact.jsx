@@ -29,8 +29,8 @@ const Contact = () => {
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="bg-white shadow-md rounded-xl p-8"
+          transition={{ duration: 1 }}
+          className="bg-white shadow-sm rounded-xl p-8"
         >
           <h2 className="text-3xl font-semibold mb-6 text-blue-600">Send Us a Message</h2>
 
@@ -39,7 +39,7 @@ const Contact = () => {
             <input type="email" placeholder="Email Address" className="w-full p-3 border rounded-lg border-gray-700" />
             <input type="text" placeholder="Phone Number (Optional)" className="w-full p-3 border rounded-lg border-gray-700" />
 
-            <select className="w-full p-3 border rounded-lg border-gray-700">
+            <select className="w-full p-3  border rounded-lg border-gray-700">
               <option>Subject</option>
               <option>Booking Inquiry</option>
               <option>Customer Support</option>
@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white shadow-md p-5 rounded-xl">
+            <div className="flex items-center gap-4 bg-white shadow-sm p-5 rounded-xl">
               <FaEnvelope className="text-blue-600 text-2xl" />
               <div>
                 <h3 className="text-lg font-semibold">Email Address</h3>
@@ -82,7 +82,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white shadow-md p-5 rounded-xl">
+            <div className="flex items-center gap-4 bg-white shadow-sm p-5 rounded-xl">
               <FaMapMarkerAlt className="text-blue-600 text-2xl" />
               <div>
                 <h3 className="text-lg font-semibold">Office Location</h3>
@@ -93,7 +93,7 @@ const Contact = () => {
           </div>
 
           {/* Business Hours */}
-          <div className="bg-white shadow-md p-6 rounded-xl">
+          <div className="bg-white shadow-sm p-6 rounded-xl">
             <h3 className="text-xl font-semibold mb-3 text-blue-600">Business Hours</h3>
             <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM</p>
             <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>

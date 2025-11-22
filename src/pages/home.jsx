@@ -55,7 +55,7 @@ const Home = () => {
             </p>
 
                 {/* Search Bar */}
-          <div className="bg-white bg-opacity-90 rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center gap-4 w-[90%] md:w-[70%] mx-auto text-gray-600">
+          <div className="bg-white bg-opacity-90 rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center gap-4 w-full md:w-[70%] mx-40 text-gray-600">
             <input
                 type="text"
                  placeholder="Where to?"
@@ -126,7 +126,7 @@ const Home = () => {
                 <h2 className="text-4xl font-bold text-center text-blue-600">
                      Popular Experiences
                 </h2>
-                  <p className="text-center text-gray-600 mt-2 text-lg">
+                  <p className="text-center text-gray-600 mt-4 text-lg">
                      Find exciting activities and memorable adventures.
                  </p>
 
@@ -178,8 +178,9 @@ const Home = () => {
                    </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative group rounded-xl overflow-hidden shadow-sm">
-                     <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" className="w-full h-[450px] object-cover" />
+                <div className="relative group rounded-xl overflow-hidden ">
+                     <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" className="w-full h-full object-cover" />
+                     <div className='absolute inset-0 bg-black/30'></div>
                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                       {/*big */}
                  <div className="absolute bottom-6 left-6 text-white">
@@ -318,9 +319,7 @@ const Home = () => {
           </button>
         </div>
 
-        <p className="text-gray-400 text-xs mt-4">
-          We respect your privacy. No spam ever.
-        </p>
+        
       </div>
     </section>
     </div>
