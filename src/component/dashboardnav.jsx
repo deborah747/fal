@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import Logout from "./logout";
 
 const DashboardNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -9,14 +10,14 @@ const DashboardNavbar = () => {
     <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between sticky top-0 z-50">
       
       {/* Logo */}
-      <h2 className="text-2xl font-bold text-blue-600">MyTrips</h2>
+      <h2 className="text-2xl font-bold text-blue-600">TravelEase</h2>
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
-        <Link to="/dashboard" className="hover:text-blue-600">Dashboard</Link>
-        <Link to="/dashboard/trips" className="hover:text-blue-600">My Trips</Link>
-        <Link to="/dashboard/saved" className="hover:text-blue-600">Saved</Link>
-        <Link to="/dashboard/settings" className="hover:text-blue-600">Settings</Link>
+        <Link to="/" className="hover:text-blue-600">home</Link>
+        <Link to="/destination" className="hover:text-blue-600">destination</Link>
+        <Link to="/hotels" className="hover:text-blue-600">hotels</Link>
+        <Link to="/dashboard/settings" className="hover:text-blue-600">saved</Link>
       </div>
 
       {/* Profile Icon */}
@@ -27,6 +28,7 @@ const DashboardNavbar = () => {
           className="w-10 h-10 rounded-full border border-gray-300"
         />
       </div>
+      <Logout/>
 
       {/* Mobile Menu Button */}
       <button 

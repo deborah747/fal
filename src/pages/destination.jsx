@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const Destination = () => {
   const [continent, setContinent] = useState("All");
+  const navigate = useNavigate();
 
   const destinations = [
     {
@@ -55,9 +58,37 @@ const Destination = () => {
     },
   ];
 
-  const filtered = continent === "All"
-    ? destinations
-    : destinations.filter((d) => d.continent === continent);
+  const filtered =
+    continent === "All"
+      ? destinations
+      : destinations.filter((d) => d.continent === continent);
+
+  //  Handle View Details (require login)
+  const handleViewDetails = (id) => {
+    if (!auth.currentUser) {
+      alert("Please sign in to view destination details.");
+      navigate("/signin");
+      return;
+    }
+    navigate(`/des/${id}`);
+  };
+
+  //  Handle Save Destination
+  const handleSave = async (item) => {
+    if (!auth.currentUser) {
+      alert("Please sign in to save destinations.");
+      navigate("/signin");
+      return;
+    }
+
+    const userId = auth.currentUser.uid;
+    await setDoc(
+      doc(db, "users", userId, "savedDestinations", item.id.toString()),
+      item
+    );
+
+    alert(`${item.name} has been saved to your dashboard.`);
+  };
 
   return (
     <div className="min-h-screen">
@@ -70,11 +101,12 @@ const Destination = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-        
+        {/* Filters */}
         <div className="bg-white p-6 rounded-xl shadow-sm h-96 md:sticky top-24">
           <h2 className="text-xl font-semibold text-blue-700 mb-4">Filter</h2>
-
-          <label className="block mb-2 font-medium text-gray-700">Continent</label>
+          <label className="block mb-2 font-medium text-gray-700">
+            Continent
+          </label>
           <select
             className="w-full border p-2 rounded-md mb-6"
             value={continent}
@@ -90,29 +122,46 @@ const Destination = () => {
           </select>
         </div>
 
+        {/* Destination Cards */}
         <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {filtered.map((item) => (
             <div
               key={item.id}
               className="bg-white shadow-sm rounded-xl overflow-hidden hover:shadow-xl transition"
             >
-              <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-48 object-cover"
+              />
+
               <div className="p-5">
-                <h3 className="text-xl font-bold text-blue-700">{item.name}</h3>
+                <h3 className="text-xl font-bold text-blue-700">
+                  {item.name}
+                </h3>
                 <p className="text-gray-600 text-sm">{item.country}</p>
                 <p className="text-gray-700 mt-2 text-sm">{item.desc}</p>
 
-                <Link
-                  to={`/des/${item.id}`}
-                  className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-                >
-                  View Details
-                </Link>
+                {/* Buttons */}
+                <div className="flex items-center justify-between mt-4">
+                  <button
+                    onClick={() => handleViewDetails(item.id)}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    View Details
+                  </button>
+
+                  <button
+                    onClick={() => handleSave(item)}
+                    className="px-4 py-2  bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Save 
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

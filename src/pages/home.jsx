@@ -2,6 +2,7 @@ import React from 'react'
 import {motion} from "framer-motion"
 import { FaStar } from "react-icons/fa";
 import { FaHeadset, FaShieldAlt, FaTags, FaCheckCircle } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -104,14 +105,15 @@ const Home = () => {
                         whileHover={{ opacity: 2 }}
                         transition={{ duration: 0.2 }}
                          className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center">
-                    
+                      <Link to={'/des'}>
                      <motion.button
                          initial={{ opacity: 0, scale: 0.8 }}
                          whileHover={{ opacity: 1, scale: 1 }}
                          transition={{ duration: 0.2 }}
                         className="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium shadow-sm">
-                        Book Now
+                        see more
                     </motion.button>
+                    </Link>
                  </motion.div>  
                     <div className="absolute bottom-4 left-4 text-white">
                        <h3 className="text-2xl font-semibold">{dest.name}</h3>
@@ -160,9 +162,10 @@ const Home = () => {
                       </div>
                          {/* button */}
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
-                            Book Now
-                          </button>
+                        
+                        <Link to={'/hotel'}> <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                            see more
+                          </button></Link> 
                        </div>
                  </div>
                 ))}

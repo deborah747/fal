@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DashboardNavbar from "../component/dashboardnav";
 import { FiHome, FiCalendar, FiHeart, FiSettings, FiMenu, FiX } from "react-icons/fi";
 
-const Dashboard = () => {
+const DashboardLayout = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div className="flex">
 
         {/* Sidebar */}
-        <div className={`fixed md:relative top-0 left-0 h-full bg-white shadow-md w-64 p-6 transition-transform duration-300 z-40
+        <div className={`fixed md:relative top-0 left-0 h-screen bg-white shadow-md w-64 p-6 transition-transform duration-300 z-40
             ${openSidebar ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}>
           
           <h3 className="text-xl font-bold mb-6 text-blue-600">Menu</h3>
@@ -111,4 +111,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardLayout;
