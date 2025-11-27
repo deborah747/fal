@@ -1,8 +1,12 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+   const location= useLocation();
+   const hidefooter= location.pathname.startsWith("/dashboard");
+   if (hidefooter) return null;
   return (
     <div >
       <footer className="bg-blue-900 text-gray-200 py-10 ">
