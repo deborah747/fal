@@ -7,27 +7,13 @@ const DashboardNavbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+    <nav className="w-full bg-white shadow-sm px-12 py-4 flex items-center justify-between sticky top-0 z-50">
       
       {/* Logo */}
-      <h2 className="text-2xl font-bold text-blue-600">TravelEase</h2>
+      <h2 className="text-3xl font-bold text-blue-600">TravelEase</h2>
 
-      {/* Desktop Links */}
-      <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
-        <Link to="/" className="hover:text-blue-600">home</Link>
-        <Link to="/destination" className="hover:text-blue-600">destination</Link>
-        <Link to="/hotels" className="hover:text-blue-600">hotels</Link>
-        <Link to="/dashboard/settings" className="hover:text-blue-600">saved</Link>
-      </div>
-
-      {/* Profile Icon */}
-      <div className="hidden md:flex items-center space-x-3">
-        <img 
-          src="/images/user.jpg" 
-          alt="profile"
-          className="w-10 h-10 rounded-full border border-gray-300"
-        />
-      </div>
+     
+     
       <Logout/>
 
       {/* Mobile Menu Button */}
@@ -38,39 +24,7 @@ const DashboardNavbar = () => {
         {open ? <FiX size={28} /> : <FiMenu size={28} />}
       </button>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col py-4 md:hidden">
-          <Link 
-            to="/dashboard" 
-            className="px-6 py-3 hover:bg-gray-100 border-b"
-            onClick={() => setOpen(false)}
-          >
-            Dashboard
-          </Link>
-          <Link 
-            to="/dashboard/trips" 
-            className="px-6 py-3 hover:bg-gray-100 border-b"
-            onClick={() => setOpen(false)}
-          >
-            My Trips
-          </Link>
-          <Link 
-            to="/dashboard/saved" 
-            className="px-6 py-3 hover:bg-gray-100 border-b"
-            onClick={() => setOpen(false)}
-          >
-            Saved
-          </Link>
-          <Link 
-            to="/dashboard/settings" 
-            className="px-6 py-3 hover:bg-gray-100"
-            onClick={() => setOpen(false)}
-          >
-            Settings
-          </Link>
-        </div>
-      )}
+      
     </nav>
   );
 };

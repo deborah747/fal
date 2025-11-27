@@ -1,24 +1,43 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration - using import.meta.env in Vite
 const firebaseConfig = {
-  apiKey: "AIzaSyB2GmXPw6gZ0odpn7G7ashDTQrojyuMUfQ",
-  authDomain: "booking-83228.firebaseapp.com",
-  projectId: "booking-83228",
-  storageBucket: "booking-83228.firebasestorage.app",
-  messagingSenderId: "443936127054",
-  appId: "1:443936127054:web:db94913856f0734316ab1f",
-  measurementId: "G-J5H1TB9M8Z"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+// Debug: Log the environment variables
+console.log('Firebase Config:', {
+  hasApiKey: !!import.meta.env.VITE_FIREBASE_API_KEY,
+  hasAuthDomain: !!import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  hasProjectId: !!import.meta.env.VITE_FIREBASE_PROJECT_ID
+});
+
+// Check if any required config is missing
+const missingConfig = Object.entries(firebaseConfig).filter(([key, value]) => !value);
+if (missingConfig.length > 0) {
+  console.error("❌ Missing Firebase configuration:", missingConfig.map(([key]) => key).join(', '));
+  throw new Error("Missing Firebase configuration. Please check your .env file.");
+}
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+let auth, db;
+try {
+  const app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+  
+  console.log("✅ Firebase initialized successfully");
+} catch (error) {
+  console.error("❌ Firebase initialization error:", error);
+  throw error;
+}
+
+export { auth, db };
