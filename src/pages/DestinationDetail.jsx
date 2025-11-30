@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const destinationData = {
   1: {
     name: "Paris",
-    image: "/images/paris.jpg",
+    image: "/images/parisss.jpg",
     description:
       "Experience the romance of Paris with iconic landmarks, vibrant culture, world-class food and timeless architecture.",
     area: "Champs-Élysées, Montmartre, Louvre District",
@@ -29,7 +29,7 @@ const destinationData = {
   },
   3: {
     name: "Cape Town",
-    image: "/images/capetown.jpg",
+    image: "/images/ct.jpg",
     description:
       "From Table Mountain to coastal beaches, Cape Town offers adventure, beauty and vibrant culture.",
     area: "Table Mountain, V&A Waterfront",

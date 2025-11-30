@@ -14,7 +14,7 @@ const Destination = () => {
       name: "Paris",
       country: "France",
       continent: "Europe",
-      image: "/images/paris.jpg",
+      image: "/images/parisss.jpg",
       desc: "The city of romance and iconic landmarks.",
     },
     {
@@ -30,7 +30,7 @@ const Destination = () => {
       name: "Cape Town",
       country: "South Africa",
       continent: "Africa",
-      image: "/images/capetown.jpg",
+      image: "/images/ct.jpg",
       desc: "Mountains, oceans, wildlife — everything in one.",
     },
     {
@@ -59,11 +59,11 @@ const Destination = () => {
     },
     {
       id: 7,
-      name: "Venice",
-      country: "Italy",
-      continent: "Europe",
-      image: "/images/venice.jpg",
-      desc: "One of the most beautiful cities built on water.",
+      name: " Bueno Aires",
+      country: "Argentina",
+      continent: "South America",
+      image: "/images/aargemtina.jpg",
+      desc: "Capital city — famous for nightlife, tango, food, and historic neighborhood.",
     },
     {
       id: 8,
@@ -75,10 +75,10 @@ const Destination = () => {
     },
     {
       id: 6,
-      name: "Venice",
-      country: "Italy",
-      continent: "Europe",
-      image: "/images/venice.jpg",
+      name: "Istanbul",
+      country: "Turkey",
+      continent: "Asia",
+      image: "/images/turkey.jpg",
       desc: "One of the most beautiful cities built on water.",
     },
   ];

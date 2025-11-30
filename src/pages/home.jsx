@@ -7,21 +7,21 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   const destinations = [
-    { name: "Paris, France", price: "$450", image: "/images/paris.jpg" },
+    { name: "Paris, France", price: "$450", image: "/images/parisss.jpg" },
     { name: "Bali, Indonesia", price: "$350", image: "/images/bali.jpg" },
     { name: "Dubai, UAE", price: "$400", image: "/images/dubai.jpg" },
-    { name: "Tokyo, Japan", price: "$500", image: "/images/japan.jpg" },
+    { name: "Tokyo, Japan", price: "$500", image: "/images/japani.jpg" },
     { name: "London, UK", price: "$420", image: "/images/london.jpg" },
-    { name: "Cape Town, South Africa", price: "$380", image: "/images/cape twn.jpg"},
+    { name: "Cape Town, South Africa", price: "$380", image: "/images/capetownn.jpg"},
   ]
    
   const experiences = [
-    {title: "Desert Safari in Dubai",category: "Adventure",rating: 4.9,price: "$120", image: "/images/dubai.jpg",},
+    {title: "Desert Safari in Dubai",category: "Adventure",rating: 4.9,price: "$120", image: "/images/desert.jpg",},
     {title: "Bali Temple & Waterfall Tour", category: "Culture",rating: 4.8, price: "$80",image: "/images/bali.jpg",},
-    {title: "Paris Food & Wine Tasting",category: "Food",rating: 4.7,price: "$150",image: "/images/paris-food.jpg",},
-    {title: "Hot Air Balloon in Cappadocia", category: "Adventure",rating: 4.9,price: "$250",image: "/images/balloon.jpg", },
-    {title: "Tokyo City Night Tour",category: "Tours", rating: 4.8,price: "$90",image: "/images/tokyo-night.jpg",},
-    {title: "Cape Town Safari",category: "Wildlife", rating: 4.9, price: "$140", image: "/images/safari.jpg", },
+    {title: "Paris Food & Wine Tasting",category: "Food",rating: 4.7,price: "$150",image: "/images/parisf.jpg",},
+    {title: "Hot Air Balloon in Cappadocia", category: "Adventure",rating: 4.9,price: "$250",image: "/images/cappadocia.jpg", },
+    {title: "Tokyo City Night Tour",category: "Tours", rating: 4.8,price: "$90",image: "/images/tokyo.jpg",},
+    {title: "Cape Town Safari",category: "Wildlife", rating: 4.9, price: "$140", image: "/images/ct.jpg", },
   ];
 
   const features = [
