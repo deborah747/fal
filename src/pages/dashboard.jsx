@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DashboardNavbar from "../component/dashboardnav";
-import { FiHome, FiCalendar, FiHeart, FiSettings, FiMenu, FiX } from "react-icons/fi";
+import { FiHome, FiCalendar, FiHeart, FiBell, FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { collection, onSnapshot } from "firebase/firestore";
 import { auth, db } from "../firebase";
@@ -49,7 +49,7 @@ useEffect(() => {
               <FiHeart size={20} /><Link to={'/dashboard/saved'}><span>Saved</span></Link> 
             </li>
             <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
-              <FiHome size={20} /><Link to={''}><span>Notifications</span></Link> 
+              <FiBell size={20} /><Link to={''}><span>Notifications</span></Link> 
             </li>
             <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
               <FiHome size={20} /><Link to={'/'}><span>Home</span></Link> 
@@ -100,7 +100,7 @@ useEffect(() => {
             
             {/* Trip Card */}
             <div className="bg-white shadow-md rounded-xl overflow-hidden">
-              <img src="/images/paris.jpg" alt="trip"
+              <img src="/images/parisss.jpg" alt="trip"
                 className="h-40 w-full object-cover" />
               <div className="p-4">
                 <h3 className="text-xl font-semibold">Paris, France</h3>

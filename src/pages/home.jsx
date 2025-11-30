@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {motion} from "framer-motion"
 import { FaStar } from "react-icons/fa";
 import { FaHeadset, FaShieldAlt, FaTags, FaCheckCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (!search.trim()) return;
+
+    // Redirect to search results page
+    navigate(`/search?q=${encodeURIComponent(search)}`);};
 
   const destinations = [
     { name: "Paris, France", price: "$450", image: "/images/parisss.jpg" },
@@ -60,6 +69,8 @@ const Home = () => {
             <input
                 type="text"
                  placeholder="Where to?"
+                 value={search}
+                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full md:w-1/4 p-3 rounded-md border border-gray-300"
             />
             <input
@@ -76,7 +87,7 @@ const Home = () => {
                  <option>3 Guests</option>
                   <option>4+ Guests</option>
             </select>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
+            <button onClick={handleSearch} className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
             Search
             </button>
           </div>

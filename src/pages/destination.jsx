@@ -51,9 +51,9 @@ const Destination = () => {
     },
     {
       id: 6,
-      name: "Venice",
-      country: "Italy",
-      continent: "Europe",
+      name: "Miami",
+      country: "USA",
+      continent: "North America",
       image: "/images/venice.jpg",
       desc: "One of the most beautiful cities built on water.",
     },
@@ -74,7 +74,7 @@ const Destination = () => {
       desc: "One of the most beautiful cities built on water.",
     },
     {
-      id: 6,
+      id: 9,
       name: "Istanbul",
       country: "Turkey",
       continent: "Asia",
