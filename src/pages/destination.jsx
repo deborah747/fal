@@ -54,7 +54,7 @@ const Destination = () => {
       name: "Miami",
       country: "USA",
       continent: "North America",
-      image: "/images/venice.jpg",
+      image: "/images/miami.jpg",
       desc: "One of the most beautiful cities built on water.",
     },
     {

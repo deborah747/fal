@@ -214,7 +214,7 @@ const [search, setSearch] = useState("");
                   <div className="grid sm:grid-cols-2 gap-6">
                          {/*1st*/}
                       <div className="relative group rounded-xl overflow-hidden shadow-sm">
-                          <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb2101f"
+                          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/137600494.jpg?k=eb4e937308fd4f3135f5600dcfc998af78e56e4303928c3b95b6432429dcd331&o="
                            className="w-full h-56 object-cover" />
                           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
 

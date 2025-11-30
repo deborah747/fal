@@ -123,7 +123,7 @@ useEffect(() => {
               </div>
             </div>
              <div className="bg-white shadow-md rounded-xl overflow-hidden">
-              <img src="/images/paris.jpg" alt="trip"
+              <img src="/images/miami.jpg" alt="trip"
                 className="h-40 w-full object-cover" />
               <div className="p-4">
                 <h3 className="text-xl font-semibold">Miami</h3>

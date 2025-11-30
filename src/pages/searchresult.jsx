@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
-  const [hotels, setHotels] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -42,6 +41,13 @@ const SearchResults = () => {
       desc: "Luxury lifestyle and desert tours.",
     },
   ];
+  const handleViewDetails = (id) => {
+    if (!auth.currentUser) {
+      alert("Please sign in to view destination details.");
+      navigate("/signin");
+      return;
+    }
+    navigate(`/des/${id}`);}
 
   useEffect(() => {
     if (!query) return;
@@ -74,7 +80,8 @@ const SearchResults = () => {
               <p className="text-sm text-gray-700 mt-1">{item.desc}</p>
 
               <button
-                onClick={() => navigate(`/des/${item.id}`)}
+              onClick={() => handleViewDetails(item.id)}
+                
                 className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-md"
               >
                 View Details
