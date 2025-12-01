@@ -111,9 +111,6 @@ const Nav = () => {
           <Link to="/des" onClick={() => setOpen(false)}>
             <p className={linkColor}>Destination</p>
           </Link>
-          <Link to="/hotel" onClick={() => setOpen(false)}>
-            <p className={linkColor}>Hotels</p>
-          </Link>
           <Link to="/tour" onClick={() => setOpen(false)}>
             <p className={linkColor}>Tours</p>
           </Link>

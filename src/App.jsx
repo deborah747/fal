@@ -8,7 +8,6 @@ import Signup from './pages/signup';
 import Destination from './pages/destination';
 import DestinationDetail from './pages/DestinationDetail';
 import Contact from './pages/contact';
-import Hotels from './pages/hotels';
 import Payment from './pages/payment';
 import ProtectedRoute from './component/ProtectedRoute';
 import Dashboard from './pages/dashboard';
@@ -36,7 +35,7 @@ function AppContent() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/hotel" element={<Hotels />} />
+          
           <Route path="/search" element={<SearchResults />} />
 
           {/* Dashboard routes */}
