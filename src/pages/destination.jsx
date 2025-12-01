@@ -83,7 +83,7 @@ const Destination = () => {
     },
   ];
 
-  // ✅ Fetch saved destinations on page load
+
   useEffect(() => {
     const fetchSaved = async () => {
       if (!auth.currentUser) return;
@@ -103,7 +103,7 @@ const Destination = () => {
       ? destinations
       : destinations.filter((d) => d.continent === continent);
 
-  // ✅ View Details (requires login)
+  
   const handleViewDetails = (id) => {
     if (!auth.currentUser) {
       alert("Please sign in to view destination details.");
@@ -113,7 +113,7 @@ const Destination = () => {
     navigate(`/des/${id}`);
   };
 
-  // ✅ Toggle Save / Unsave
+  
   const handleSave = async (item) => {
     if (!auth.currentUser) {
       alert("Please sign in to save destinations.");
@@ -127,12 +127,12 @@ const Destination = () => {
     const exists = savedList.includes(item.id.toString());
 
     if (exists) {
-      // ✅ Remove from saved
+      
       await deleteDoc(ref);
       setSavedList(savedList.filter((id) => id !== item.id.toString()));
       alert(`${item.name} removed from saved.`);
     } else {
-      // ✅ Save new item
+    
       await setDoc(ref, item);
       setSavedList([...savedList, item.id.toString()]);
       alert(`${item.name} has been saved.`);

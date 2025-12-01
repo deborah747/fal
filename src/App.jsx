@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from './component/nav';
 import Footer from './component/footer';
 import Home from './pages/home';
@@ -55,12 +55,15 @@ function AppContent() {
 }
 
 const App = () => {
+  const useHashRouter = import.meta.env.VITE_USE_HASH_ROUTER === 'true';
+  const RouterComponent = useHashRouter ? HashRouter : BrowserRouter;
+
   return (
-    <Router>
+    <RouterComponent>
       <div className="flex flex-col min-h-screen">
         <AppContent />
       </div>
-    </Router>
+    </RouterComponent>
   );
 };
 

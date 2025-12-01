@@ -12,7 +12,7 @@ const [search, setSearch] = useState("");
   const handleSearch = () => {
     if (!search.trim()) return;
 
-    // Redirect to search results page
+    
     navigate(`/search?q=${encodeURIComponent(search)}`);};
 
   const destinations = [
