@@ -42,15 +42,11 @@ useEffect(() => {
             <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer ">
               <FiHome size={20} /> <span>Dashboard</span>
             </li>
-            <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
-              <FiCalendar size={20} /> <span>My Trips</span>
-            </li>
+            
             <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
               <FiHeart size={20} /><Link to={'/dashboard/saved'}><span>Saved</span></Link> 
             </li>
-            <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
-              <FiBell size={20} /><Link to={''}><span>Notifications</span></Link> 
-            </li>
+            
             <li className="flex items-center space-x-3 hover:text-blue-600 cursor-pointer">
               <FiHome size={20} /><Link to={'/'}><span>Home</span></Link> 
             </li>
