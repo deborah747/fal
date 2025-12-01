@@ -50,7 +50,6 @@ const Nav = () => {
 
         <div className="hidden md:flex space-x-8 font-medium text-lg">
           <Link to="/des"><p className={linkColor}>Destination</p></Link>
-          <Link to="/hotel"><p className={linkColor}>Hotels</p></Link>
           <Link to="/contact"><p className={linkColor}>Contact</p></Link>
         </div>
 
