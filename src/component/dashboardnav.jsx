@@ -4,7 +4,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Logout from "./logout";
 
 const DashboardNavbar = () => {
-  const [open, setOpen] = useState(false);
+  
 
   return (
     <nav className="w-full bg-white shadow-sm px-12 py-4 flex items-center justify-between sticky top-0 z-50">
@@ -16,13 +16,7 @@ const DashboardNavbar = () => {
      
       <Logout/>
 
-      {/* Mobile Menu Button */}
-      <button 
-        className="md:hidden"
-        onClick={() => setOpen(!open)}
-      >
-        {open ? <FiX size={28} /> : <FiMenu size={28} />}
-      </button>
+      
 
       
     </nav>

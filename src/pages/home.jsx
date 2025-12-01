@@ -56,16 +56,16 @@ const [search, setSearch] = useState("");
              <div className="absolute inset-0 bg-black/30"></div>
 
                   {/* Text */}
-        <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <div className="relative z-10 px-4 sm:px-6 md:px-10">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
                Explore the World with Ease
             </h1>
-            <p className="text-lg md:text-xl mb-8 font-medium">
+            <p className="text-lg sm:text-lg md:text-xl mb-8 font-medium">
               Find your next flight, hotel, or unforgettable tour.
             </p>
 
                 {/* Search Bar */}
-          <div className="bg-white bg-opacity-90 rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center gap-4 w-full md:w-[70%] mx-40 text-gray-600">
+          <div className="bg-white bg-opacity-90 rounded-lg shadow-sm p-4 flex flex-col md:flex-row items-center gap-4 w-full max-w-6xl mx-auto text-gray-600">
             <input
                 type="text"
                  placeholder="Where to?"
@@ -135,11 +135,11 @@ const [search, setSearch] = useState("");
           </div>
       </section>
                 {/*popular experience*/}
-      <section className='pt-40 px-40'>
-                <h2 className="text-4xl font-bold text-center text-blue-600">
+      <section className='pt-40 px-4 sm:px-6 md:px-10'>
+                <h2 className="text-4xl sm:text-3xl font-bold text-center text-blue-600">
                      Popular Experiences
                 </h2>
-                  <p className="text-center text-gray-600 mt-4 text-lg">
+                  <p className="text-center text-gray-600 mt-4 text-lg sm:text-lg">
                      Find exciting activities and memorable adventures.
                  </p>
 
@@ -174,7 +174,7 @@ const [search, setSearch] = useState("");
                          {/* button */}
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                         
-                        <Link to={'/hotel'}> <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                        <Link to={'/des'}> <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
                             see more
                           </button></Link> 
                        </div>
@@ -191,7 +191,7 @@ const [search, setSearch] = useState("");
                       <p className="text-gray-600 mt-2">Hand-picked luxury hotels just for you</p>
                    </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid  md:grid-cols-2 gap-8">
                 <div className="relative group rounded-xl overflow-hidden ">
                      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" className="w-full h-full object-cover" />
                      <div className='absolute inset-0 bg-black/30'></div>
@@ -204,9 +204,9 @@ const [search, setSearch] = useState("");
                         <span className="text-sm">(1,240 reviews)</span>
                      </div>
                        <p className="text-lg font-semibold">₦120,000 / night</p>
-                        <button className="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-200 transition">
-                          Book Now
-                       </button>
+                      <Link to={'/des'}>  <button className="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-200 transition">
+                          View details
+                       </button></Link>
                   </div>
                </div>
 
@@ -221,9 +221,9 @@ const [search, setSearch] = useState("");
                                <div className="absolute bottom-4 left-4 text-white">
                                      <h4 className="text-lg font-bold">City View Resort</h4>
                                       <p className="text-sm">₦85,000 / night</p>
-                                      <button className="mt-2 px-4 py-1.5 bg-white text-blue-600 text-sm font-medium rounded-lg hover:bg-gray-200">
+                                 <Link to={'/des'}>     <button className="mt-2 px-4 py-1.5 bg-white text-blue-600 text-sm font-medium rounded-lg hover:bg-gray-200">
                                          View Details
-                                     </button>
+                                     </button></Link>
                                 </div>
                          </div>
                              {/*2nd */}

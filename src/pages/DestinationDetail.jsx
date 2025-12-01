@@ -80,7 +80,10 @@ import { useParams, Link } from "react-router-dom";
           "https://cf.bstatic.com/xdata/images/hotel/max500/536716624.jpg?k=ca0fa71643507364488c0f638e83b9d1c53f212f2614a08b0e9db387afa10a74&o=",
         ],
         amenities:[
-
+          "Free WiFi",
+       "Breakfast included",
+       "Swimming Pool",
+       "Airport Shuttle"
         ],
         rating:4.8,
         desc:"A serene tropical escape surrounded by lush greenery, offering warm Balinese hospitality, peaceful villas, and rejuvenating spa experiences. The perfect destination for relaxation and island tranquility.",
@@ -96,10 +99,13 @@ import { useParams, Link } from "react-router-dom";
          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/756140304.jpg?k=6208937b9aa6fc4bbacac47fc09626015230d6dac1b1dfb82dd6fea5770ae719&o=",
         ],
         amenities:[
-
+        "Free high-speed WiFi",
+       "Modern fitness center",
+       "Rooftop lounge",
+       "Complimentary breakfast"
         ],
         rating:4.8,
-        desc:"",
+        desc:"A stylish and welcoming hotel offering modern comfort, spacious rooms, and exceptional service—perfect for both leisure and business travelers.",
         },
     ],
   },
@@ -121,10 +127,13 @@ import { useParams, Link } from "react-router-dom";
         
         ],
         amenities:[
-
+        "Beachfront access",
+       "Infinity swimming pool",
+       "Sea-view restaurant",
+       "Complimentary breakfast"
         ],
         rating:4.5,
-        desc:"",
+        desc:"A peaceful coastal retreat offering bright, modern rooms with breathtaking sea views. Perfect for travelers seeking relaxation, oceanfront comfort, and unforgettable sunsets.",
         },
       { id: 2,
          name: "Safari Lodge", 
@@ -135,10 +144,13 @@ import { useParams, Link } from "react-router-dom";
        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/353216665.jpg?k=74c4cb42de4f3ed50ff25c559bdac0a48265a1b9d8db3ffbd904121efb5504e0&o="
         ],
         amenities:[
-
+         "Guided wildlife tours",
+       "Outdoor firepit lounge",
+       "On-site restaurant",
+       "Complimentary breakfast"
         ],
         rating:4.6,
-        desc:"",
+        desc:"A nature-inspired retreat offering cozy cabins, wildlife views, and an authentic safari experience. Perfect for travelers seeking adventure, comfort, and a close connection to the outdoors.",
        },
     ],
   },
