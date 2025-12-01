@@ -61,7 +61,7 @@ const [search, setSearch] = useState("");
                Explore the World with Ease
             </h1>
             <p className="text-lg sm:text-lg md:text-xl mb-8 font-medium">
-              Find your next flight, hotel, or unforgettable tour.
+              Find your next  hotel and unforgettable tour.
             </p>
 
                 {/* Search Bar */}
