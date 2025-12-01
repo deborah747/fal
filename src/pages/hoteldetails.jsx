@@ -12,7 +12,7 @@ const HotelDetail = () => {
   const hotel = dest.hotels.find((h) => String(h.id) === hotelId);
   if (!hotel) return <p className="p-10 text-center">Hotel not found.</p>;
 
-  // For gallery: track which image to show as main
+  
   const [mainImage, setMainImage] = useState(
     hotel.images && hotel.images.length > 0 ? hotel.images[0] : null
   );

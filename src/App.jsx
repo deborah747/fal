@@ -35,7 +35,6 @@ function AppContent() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          
           <Route path="/search" element={<SearchResults />} />
 
           {/* Dashboard routes */}

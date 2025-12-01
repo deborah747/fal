@@ -26,7 +26,7 @@ const Signin = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // redirect to dashboard when logged in
+      navigate("/dashboard"); 
     } catch (error) {
       setFirebaseError(error.message);
     }

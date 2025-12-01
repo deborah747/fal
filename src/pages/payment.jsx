@@ -124,7 +124,7 @@ const Payment = () => {
           </div>
         </div>
       ) : (
-        /* SUCCESS SCREEN */
+        
          <div  className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-20 mt-30 text-center h-96">
          <div  className="w-20 h-20 bg-green-100 rounded-full flex mx-auto mb-4">
              <span className="m-auto text-green-600 text-4xl">✔</span>

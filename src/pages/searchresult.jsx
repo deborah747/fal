@@ -10,7 +10,7 @@ const SearchResults = () => {
 
   const query = new URLSearchParams(location.search).get("q")?.toLowerCase();
 
-  // Your destination list (same from Destination page)
+  
   const destinations = [
     {
       id: 1,
@@ -52,7 +52,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (!query) return;
 
-    // filter destinations by query
+    
     const filtered = destinations.filter((d) =>
       d.name.toLowerCase().includes(query)
     );
